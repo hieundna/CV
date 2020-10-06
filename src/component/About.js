@@ -99,24 +99,24 @@ function About() {
             document.getElementById("spanCn").style.display = 'inline';
         }}>
             <div className="form-group">
-                <label for="ho">Họ <span style={{color: "red"}}>{error.ho}</span></label>
+                <label htmlFor="ho">Họ <span style={{color: "red"}}>{error.ho}</span></label>
                 <input type="text" className="form-control" name="ho" 
                         value={user.ho} onChange={handleChange} placeholder="Nhập họ" />
             </div>
             <div className="form-group">
-                <label for="ten">Tên <span style={{color: "red"}}>{error.ten}</span></label>
+                <label htmlFor="ten">Tên <span style={{color: "red"}}>{error.ten}</span></label>
                 <input type="text" className="form-control" name="ten" 
                         value={user.ten} onChange={handleChange} placeholder="Nhập tên" />
             </div>
             <div className="form-row">
             <div className="form-group col-md-5">
-                <label for="tuoi">Tuổi</label>
+                <label htmlFor="tuoi">Tuổi</label>
                 <input type="number" className="form-control" name="tuoi" 
                         value={user.tuoi} onChange={handleChange} placeholder="Nhập tuổi, tuổi phải lớn hơn 16" />
             </div>
             <div className="form-group col-md-7">
-                <label for="id_num">Số CMND <span style={{color: "red"}}>{error.id_num}</span></label>
-                <input type="text" className="form-control" name="id_num" maxlength="9" placeholder="Nhập số CMND"
+                <label htmlFor="id_num">Số CMND <span style={{color: "red"}}>{error.id_num}</span></label>
+                <input type="text" className="form-control" name="id_num" maxLength="9" placeholder="Nhập số CMND"
                         value={user.tuoi < 16 ? "0" : user.id_num} onChange={handleChange} />
             </div>
             </div>
@@ -124,19 +124,19 @@ function About() {
                 return (
                     <div className="form-row" key={i}>
                         <div className="form-group col-md-5">
-                            <label for="job_title">Chức danh</label>
+                            <label htmlFor="job_title">Chức danh</label>
                             <select name="job_title" className="form-control" 
                                 value={x.job_title}  onChange={(e) => {
                                     updateDateJob(e, i);
                                 }}>
-                                <option value="Phát triển Web" selected>Phát triển Web</option>
+                                <option value="Phát triển Web" >Phát triển Web</option>
                                 <option value="Phát triển IOS">Phát triển IOS</option>
                                 <option value="Phát triển Android">Phát triển Android</option>
                                 <option value="Khác">Khác</option>
                             </select>
                         </div>
                         <div className="form-group col-md-7">
-                            <label for="company_name">
+                            <label htmlFor="company_name">
                                 Tên công ty 
                                 <span id="spanCn" style={{color: "red"}}>
                                     {x.company_name.trim() === "" && x.job_title !== "Khác" ? " *Không được để trống" :""}
